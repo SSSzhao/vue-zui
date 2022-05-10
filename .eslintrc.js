@@ -25,6 +25,7 @@ module.exports = {
     indent: ['error', 2], // 缩进2格
     'no-mixed-spaces-and-tabs': 'error', // 不能空格与tab混用
     quotes: [2, 'single'], // 使用单引号
+    'vue/multi-word-component-names': 'off',
     'vue/html-closing-bracket-newline': 'off', // 不强制换行
     'vue/singleline-html-element-content-newline': 'off', // 不强制换行
     'vue/max-attributes-per-line': ['error', {
