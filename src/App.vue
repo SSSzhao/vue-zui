@@ -1,64 +1,19 @@
 <template>
   <div>
-    <z-container>
-      <z-header>Header</z-header>
-      <z-main>Main</z-main>
-    </z-container>
-
-    <z-container>
-      <z-header>Header</z-header>
-      <z-main>Main</z-main>
-      <z-footer>Footer</z-footer>
-    </z-container>
-
-    <z-container>
-      <z-aside width="200px">Aside</z-aside>
-      <z-main>Main</z-main>
-    </z-container>
-
-    <z-container>
-      <z-header>Header</z-header>
-      <z-container>
-        <z-aside width="200px">Aside</z-aside>
-        <z-main>Main</z-main>
-      </z-container>
-    </z-container>
-
-    <z-container>
-      <z-header>Header</z-header>
-      <z-container>
-        <z-aside width="200px">Aside</z-aside>
-        <z-container>
-          <z-main>Main</z-main>
-          <z-footer>Footer</z-footer>
-        </z-container>
-      </z-container>
-    </z-container>
-
-    <z-container>
-      <z-aside width="200px">Aside</z-aside>
-      <z-container>
-        <z-header>Header</z-header>
-        <z-main>Main</z-main>
-      </z-container>
-    </z-container>
-
-    <z-container>
-      <z-aside width="200px">Aside</z-aside>
-      <z-container>
-        <z-header>Header</z-header>
-        <z-main>Main</z-main>
-        <z-footer>Footer</z-footer>
-      </z-container>
-    </z-container>
+    <z-button type="" disabled name="123" @click="clcck">按钮</z-button>
+    <z-button type="primary" size="medium" round @click="clcck">按钮</z-button>
+    <z-button type="primary" size="small" round @click="clcck">按钮</z-button>
+    <z-button type="primary" size="mini" round @click="clcck">按钮</z-button>
   </div>
 </template>
 <script setup lang="ts">
-
+const clcck = () => {
+  console.log(1)
+}
 </script>
 
 <style lang="scss">
-.z-header, .z-footer {
+  .z-header, .z-footer {
     background-color: #B3C0D1;
     color: #333;
     text-align: center;

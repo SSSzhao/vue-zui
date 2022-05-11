@@ -2,7 +2,7 @@
 @import "../../../styles/common/var.scss";
 
 @include b(header) {
-  padding: $--header-padding;
+  padding: 0 20px;
   box-sizing: border-box;
   flex-shrink: 0;
 }

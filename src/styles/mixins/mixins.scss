@@ -1,4 +1,6 @@
 $namespace: 'z';
+$element-separator: '__';
+$modifier-separator: '--';
 $state-prefix: 'is-';
 
 @mixin b($block) {
@@ -15,4 +17,40 @@ $state-prefix: 'is-';
       @content;
     }
   }
+}
+
+@mixin m($modifier) {
+  @at-root {
+    &#{& + $modifier-separator + $modifier} {
+      @content;
+    }
+  }
+}
+
+@mixin button-variant($background-color, $color, $border-color: $background-color) {
+  background-color: $background-color;
+  border-color: $border-color;
+  color: $color;
+  &:hover, &:focus {
+    background-color: mix($--color-white, $background-color, $--button-hover-tint-percent);
+    border-color: mix($--color-white, $border-color, $--button-hover-tint-percent);
+    color: $color;
+  }
+  @include when(disabled) {
+    background-color: mix($--color-white, $background-color);
+    border-color: mix($--color-white, $border-color);
+    color: mix($--color-white, $color);
+    &:hover, &:focus {
+      cursor: not-allowed;
+      background-color: mix($--color-white, $background-color);
+      border-color: mix($--color-white, $border-color);
+      color: mix($--color-white, $color);
+    }
+  }
+}
+
+@mixin button-size($padding, $font-size, $border-radius) {
+  padding: $padding;
+  font-size: $font-size;
+  border-radius: $border-radius
 }

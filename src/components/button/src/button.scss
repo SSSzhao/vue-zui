@@ -2,24 +2,78 @@
 @import "../../../styles/common/var.scss";
 
 @include b(button) {
-  // display: inline-block;
-  // line-height: 1;
-  // white-space: nowrap;
-  // cursor: pointer;
-  // background: #fff;
-  // border: $--border-base;
-  // border-radius: $--border-radius-base;
-  // color: #606266;
-  // -webkit-appearance: none;
-  // text-align: center;
-  // box-sizing: border-box;
-  // outline: none;
-  // margin: 0;
-  // transition: .1s;
-  // font-weight: 500;
-  // -moz-user-select: none;
-  // -webkit-user-select: none;
-  // -ms-user-select: none;
-  // padding: 12px 20px;
-  // font-size: 14px;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  border: $--border-base;
+  text-align: center;
+  color: $--color-text-primary;
+  outline: none;
+  @include button-variant($--color-white, $--color-text-regular, $--border-color-base);
+  @include button-size($--button-padding, $--font-size-base, $--border-radius-base);
+  &:hover,
+  &:focus {
+    color: $--color-primary;
+    border-color: $--color-primary-light-7;
+    background-color: $--color-primary-light-9;
+  }
+  & + & {
+    margin-left: 10px;
+  }
+
+  @include when(disabled) {
+    // border-color: mix($--color-white, $--border-color-base);
+    // color: mix($--color-white, $--color-text-primary);
+    &:hover,
+    &:focus {
+      // background-color: #FFFFFF;
+      // border-color: mix($--color-white, $--border-color-base);
+      // color: mix($--color-white, $--color-text-primary);
+      cursor: not-allowed;
+    }
+  }
+
+  @include m(primary) {
+    @include button-variant($--color-primary, $--color-white);
+  }
+
+  @include m(success) {
+    @include button-variant($--color-success, $--color-white);
+  }
+
+  @include m(info) {
+    @include button-variant($--color-info, $--color-white);
+  }
+
+  @include m(warning) {
+    @include button-variant($--color-warning, $--color-white);
+  }
+
+  @include m(danger) {
+    @include button-variant($--color-danger, $--color-white);
+  }
+
+  @include m(medium) {
+    @include button-size($--button-medium-padding, $--font-size-base, $--border-radius-base);
+  }
+
+  @include m(small) {
+    @include button-size($--button-small-padding, $--font-size-extra-small, $--border-radius-small);
+  }
+
+  @include m(mini) {
+    @include button-size($--button-mini-padding, $--font-size-extra-small, $--border-radius-small);
+  }
+
+  @include when(round) {
+    border-radius: 9999px;
+  }
+
+  @include when(circle) {
+    border-radius: 50%;
+    padding: 12px;
+  }
 }

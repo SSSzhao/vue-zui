@@ -5,13 +5,15 @@ import HeaderInstall, { Header } from './header'
 import MainInstall, { Main } from './main'
 import FooterInstall, { Footer } from './footer'
 import AsideInstall, { Aside } from './aside'
+import ButtonInstall, { Button } from './button'
 
 const installs = [
   ContainerInstall,
   HeaderInstall,
   MainInstall,
   FooterInstall,
-  AsideInstall
+  AsideInstall,
+  ButtonInstall
 ]
 
 export {
@@ -19,7 +21,8 @@ export {
   Header,
   Main,
   Footer,
-  Aside
+  Aside,
+  Button
 }
 
 export default {
