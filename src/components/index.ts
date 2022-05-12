@@ -6,6 +6,7 @@ import MainInstall, { Main } from './main'
 import FooterInstall, { Footer } from './footer'
 import AsideInstall, { Aside } from './aside'
 import ButtonInstall, { Button } from './button'
+import IconInstall, { Icon } from './icon'
 
 const installs = [
   ContainerInstall,
@@ -13,20 +14,14 @@ const installs = [
   MainInstall,
   FooterInstall,
   AsideInstall,
-  ButtonInstall
+  ButtonInstall,
+  IconInstall
 ]
 
-export {
-  Container,
-  Header,
-  Main,
-  Footer,
-  Aside,
-  Button
-}
+export { Container, Header, Main, Footer, Aside, Button, Icon }
 
 export default {
-  install (app: App) {
+  install(app: App) {
     installs.forEach(install => app.use(install))
   }
 }

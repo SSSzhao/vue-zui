@@ -1,12 +1,11 @@
-import { render } from '@testing-library/vue'
+import { mount } from '@vue/test-utils'
 import { Button } from '..'
 
 describe('z-button', () => {
-  test('Button Disabled', () => {
-    const { getByText } = render(new Button())
-
-    console.log(getByText)
-
-    // expect(wrapper.classes()).toContain('is-disabled')
+  test('Button Type', () => {
+    const wrapper = mount({
+      template: <Button type="primary" />
+    })
+    expect(wrapper.find('.z-button--primary').classes()).toContain('z-button--primary')
   })
 })

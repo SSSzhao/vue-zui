@@ -11,7 +11,7 @@ export default {
   title: 'Header 底栏容器',
   category: '布局',
   status: '100%',
-  install (app: App): void {
+  install(app: App): void {
     app.use(Footer as any)
   }
 }

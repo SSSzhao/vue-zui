@@ -27,7 +27,7 @@ $state-prefix: 'is-';
   }
 }
 
-@mixin button-variant($background-color, $color, $border-color: $background-color) {
+@mixin button-variant( $color, $background-color, $border-color: $background-color) {
   background-color: $background-color;
   border-color: $border-color;
   color: $color;
@@ -45,6 +45,15 @@ $state-prefix: 'is-';
       background-color: mix($--color-white, $background-color);
       border-color: mix($--color-white, $border-color);
       color: mix($--color-white, $color);
+    }
+  }
+  @include when(loading) {
+    &,
+    &:hover,
+    &:focus {
+      color: $color;
+      background-color: mix($--color-white, $background-color);
+      border-color: mix($--color-white, $border-color);
     }
   }
 }

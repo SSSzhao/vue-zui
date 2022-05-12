@@ -11,7 +11,7 @@ export default defineComponent({
       default: 'horizontal'
     }
   },
-  setup (props, { slots }) {
+  setup(props, { slots }) {
     // 当子元素中包含 <z-header> 或 <z-footer> 时，全部子元素会垂直上下排列，否则会水平左右排列
     const isVertical = computed(() => {
       if (slots.default) {
@@ -24,7 +24,9 @@ export default defineComponent({
       }
     })
     return () => {
-      return <div class={['z-container', isVertical.value && 'is-vertical']}>{ slots.default?.() }</div>
+      return (
+        <div class={['z-container', isVertical.value && 'is-vertical']}>{slots.default?.()}</div>
+      )
     }
   }
 })

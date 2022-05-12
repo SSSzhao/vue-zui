@@ -32,5 +32,13 @@ export const buttonProps = {
   nativeType: {
     type: String as PropType<IButtonNativeType>,
     default: 'button'
+  },
+  loading: {
+    type: Boolean,
+    default: false
+  },
+  icon: {
+    type: String,
+    default: ''
   }
 }

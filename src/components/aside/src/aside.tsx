@@ -8,9 +8,13 @@ export default defineComponent({
       default: '300px'
     }
   },
-  setup (props, { slots }) {
+  setup(props, { slots }) {
     return () => {
-      return <div class='z-aside' style={{ width: props.width }}>{ slots.default?.() }</div>
+      return (
+        <div class="z-aside" style={{ width: props.width }}>
+          {slots.default?.()}
+        </div>
+      )
     }
   }
 })

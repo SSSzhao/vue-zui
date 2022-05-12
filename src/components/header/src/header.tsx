@@ -8,9 +8,13 @@ export default defineComponent({
       default: '60px'
     }
   },
-  setup (props, { slots }) {
+  setup(props, { slots }) {
     return () => {
-      return <div class='z-header' style={{ height: props.height }}>{ slots.default?.() }</div>
+      return (
+        <div class="z-header" style={{ height: props.height }}>
+          {slots.default?.()}
+        </div>
+      )
     }
   }
 })

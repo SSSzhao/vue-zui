@@ -8,10 +8,10 @@ Main.install = function (app: App) {
 export { Main }
 
 export default {
-  title: 'Header 主要区域容器',
+  title: 'Main 主要区域容器',
   category: '布局',
   status: '100%',
-  install (app: App): void {
+  install(app: App): void {
     app.use(Main as any)
   }
 }

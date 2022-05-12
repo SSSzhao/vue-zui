@@ -12,7 +12,7 @@
   text-align: center;
   color: $--color-text-primary;
   outline: none;
-  @include button-variant($--color-white, $--color-text-regular, $--border-color-base);
+  @include button-variant($--color-text-regular, $--color-white, $--border-color-base);
   @include button-size($--button-padding, $--font-size-base, $--border-radius-base);
   &:hover,
   &:focus {
@@ -24,56 +24,104 @@
     margin-left: 10px;
   }
 
-  @include when(disabled) {
-    // border-color: mix($--color-white, $--border-color-base);
-    // color: mix($--color-white, $--color-text-primary);
-    &:hover,
-    &:focus {
-      // background-color: #FFFFFF;
-      // border-color: mix($--color-white, $--border-color-base);
-      // color: mix($--color-white, $--color-text-primary);
-      cursor: not-allowed;
+  & [class*="z-icon-"] {
+    & + span {
+      margin-left: 5px;
     }
   }
 
+  @include when(round) {
+    border-radius: 9999px !important;
+  }
+
+  @include when(circle) {
+    border-radius: 50% !important;
+    padding: $--button-padding-vertical;
+  }
+
   @include m(primary) {
-    @include button-variant($--color-primary, $--color-white);
+    @include button-variant($--color-white, $--color-primary);
   }
 
   @include m(success) {
-    @include button-variant($--color-success, $--color-white);
+    @include button-variant($--color-white, $--color-success);
   }
 
   @include m(info) {
-    @include button-variant($--color-info, $--color-white);
+    @include button-variant($--color-white, $--color-info);
   }
 
   @include m(warning) {
-    @include button-variant($--color-warning, $--color-white);
+    @include button-variant($--color-white, $--color-warning);
   }
 
   @include m(danger) {
-    @include button-variant($--color-danger, $--color-white);
+    @include button-variant($--color-white, $--color-danger);
   }
 
   @include m(medium) {
     @include button-size($--button-medium-padding, $--font-size-base, $--border-radius-base);
+    @include when(circle) {
+      padding: $--button-medium-padding-vertical;
+    }
   }
 
   @include m(small) {
     @include button-size($--button-small-padding, $--font-size-extra-small, $--border-radius-small);
+    @include when(circle) {
+      padding: $--button-small-padding-vertical;
+    }
   }
 
   @include m(mini) {
     @include button-size($--button-mini-padding, $--font-size-extra-small, $--border-radius-small);
+    @include when(circle) {
+      padding: $--button-mini-padding-vertical;
+    }
   }
 
-  @include when(round) {
-    border-radius: 9999px;
+  @include m(text) {
+    border-color: transparent;
+    color: $--color-primary;
+    border-color: transparent;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    &:hover, &:focus {
+      background: transparent;
+      border-color: transparent;
+      color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+    }
+    @include when(disabled) {
+      color: mix($--color-white, $--color-primary);
+      &:hover, &:focus {
+        cursor: not-allowed;
+        color: mix($--color-white, $--color-primary);
+      }
+    }
   }
 
-  @include when(circle) {
-    border-radius: 50%;
-    padding: 12px;
+  @include when(loading) {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      // background-color: rgba(255,255,255,.35);
+    }
+  }
+
+  @include when(disabled) {
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+    }
   }
 }

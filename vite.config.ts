@@ -23,9 +23,6 @@ export default defineConfig({
   server: {
     host: true
   },
-  test: {
-    environment: 'happy-dom'
-  },
   build: {
     // 消除打包大小超过 500kb 警告
     chunkSizeWarningLimit: 2000,
